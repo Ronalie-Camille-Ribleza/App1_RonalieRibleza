@@ -48,6 +48,31 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+        wetIngredients.adapter = adapterB
+        wetIngredients.onItemSelectedListener = object: AdapterView.OnItemSelectedListener
+        {
+            override fun onNothingSelected(parent: AdapterView<*>?)
+            {
+            }
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
+            {
+                if(wetIngredients.selectedItemPosition==0)
+                {
+                    wetConditionA()
+                }
+                if(wetIngredients.selectedItemPosition==1)
+                {
+                    wetConditionB()
+                }
+                if(wetIngredients.selectedItemPosition==2)
+                {
+                    wetConditionC()
+                }
+            }
+        }
+
+
     }
 
     private fun dryConditionA()
@@ -61,5 +86,18 @@ class MainActivity : AppCompatActivity() {
     private fun dryConditionC()
     {
         Toast.makeText(this, "You selected" + dryIngredients.selectedItem, Toast.LENGTH_LONG).show()
+    }
+
+    private fun wetConditionA()
+    {
+        Toast.makeText(this, "You selected" + wetIngredients.selectedItem, Toast.LENGTH_LONG).show()
+    }
+    private fun wetConditionB()
+    {
+        Toast.makeText(this, "You selected" + wetIngredients.selectedItem, Toast.LENGTH_LONG).show()
+    }
+    private fun wetConditionC()
+    {
+        Toast.makeText(this, "You selected" + wetIngredients.selectedItem, Toast.LENGTH_LONG).show()
     }
 }
