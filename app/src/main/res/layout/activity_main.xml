@@ -54,11 +54,11 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        android:hint="Wet Ingredient"
         android:contentDescription="Wet ingredient selector"
+        android:hint="Wet Ingredient"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dryIngredients"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
@@ -77,5 +77,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/wetIngredients"
         tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ingredients2"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="515dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

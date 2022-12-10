@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -36,15 +35,15 @@ class MainActivity : AppCompatActivity() {
             {
                 if(dryIngredients.selectedItemPosition==0)
                 {
-                    dryConditionA()
+
                 }
                 if(dryIngredients.selectedItemPosition==1)
                 {
-                    dryConditionB()
+
                 }
                 if(dryIngredients.selectedItemPosition==2)
                 {
-                    dryConditionC()
+
                 }
             }
         }
@@ -59,45 +58,25 @@ class MainActivity : AppCompatActivity() {
             {
                 if(wetIngredients.selectedItemPosition==0)
                 {
-                    wetConditionA()
+
                 }
                 if(wetIngredients.selectedItemPosition==1)
                 {
-                    wetConditionB()
+
                 }
                 if(wetIngredients.selectedItemPosition==2)
                 {
-                    wetConditionC()
+
                 }
             }
         }
 
+        button.setOnClickListener{
+            if(dryIngredients.selectedItemPosition==0 && wetIngredients.selectedItemPosition==0)
+            {
 
-    }
-
-    private fun dryConditionA()
-    {
-        Toast.makeText(this, "You selected" + dryIngredients.selectedItem, Toast.LENGTH_LONG).show()
-    }
-    private fun dryConditionB()
-    {
-        Toast.makeText(this, "You selected" + dryIngredients.selectedItem, Toast.LENGTH_LONG).show()
-    }
-    private fun dryConditionC()
-    {
-        Toast.makeText(this, "You selected" + dryIngredients.selectedItem, Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
-    private fun wetConditionA()
-    {
-        Toast.makeText(this, "You selected" + wetIngredients.selectedItem, Toast.LENGTH_LONG).show()
-    }
-    private fun wetConditionB()
-    {
-        Toast.makeText(this, "You selected" + wetIngredients.selectedItem, Toast.LENGTH_LONG).show()
-    }
-    private fun wetConditionC()
-    {
-        Toast.makeText(this, "You selected" + wetIngredients.selectedItem, Toast.LENGTH_LONG).show()
-    }
 }
