@@ -1,5 +1,6 @@
 package com.example.cake_ulator
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -11,8 +12,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     // creating arrays for every kind of ingredient
-    val ingredientsA = arrayOf("Flour", "Sugar", "Cocoa Powder")
-    val ingredientsB = arrayOf("Milk", "Egg", "Oil")
+    val ingredientsA = arrayOf("Select", "Flour", "Sugar", "Cocoa Powder")
+    val ingredientsB = arrayOf("Select", "Milk", "Egg", "Oil")
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -34,21 +35,22 @@ class MainActivity : AppCompatActivity() {
         dryIngredients.adapter = adapterD
         dryIngredients.onItemSelectedListener = object: AdapterView.OnItemSelectedListener
         {
+            @SuppressLint("SetTextI18n")
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
             {
-                if(dryIngredients.selectedItemPosition==0)
-                {
-                    dryPreview.setText(" " + dryIngredients.selectedItem)
-                }
-
-                else if(dryIngredients.selectedItemPosition==1)
-                {
-                    dryPreview.setText(" " + dryIngredients.selectedItem)
-                }
-
-                else if(dryIngredients.selectedItemPosition==2)
-                {
-                    dryPreview.setText(" " + dryIngredients.selectedItem)
+                when (dryIngredients.selectedItemPosition) {
+                    0 -> {
+                        dryPreview
+                    }
+                    1 -> {
+                        dryPreview.setText(" " + dryIngredients.selectedItem)
+                    }
+                    2 -> {
+                        dryPreview.setText(" " + dryIngredients.selectedItem)
+                    }
+                    3 -> {
+                        dryPreview.setText(" " + dryIngredients.selectedItem)
+                    }
                 }
             }
 
@@ -63,21 +65,22 @@ class MainActivity : AppCompatActivity() {
         wetIngredients.adapter = adapterW
         wetIngredients.onItemSelectedListener = object: AdapterView.OnItemSelectedListener
         {
+            @SuppressLint("SetTextI18n")
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
             {
-                if(wetIngredients.selectedItemPosition==0)
-                {
-                    wetPreview.setText(" " + wetIngredients.selectedItem)
-                }
-
-                else if(wetIngredients.selectedItemPosition==1)
-                {
-                    wetPreview.setText(" " + wetIngredients.selectedItem)
-                }
-
-                else if(wetIngredients.selectedItemPosition==2)
-                {
-                    wetPreview.setText(" " + wetIngredients.selectedItem)
+                when (wetIngredients.selectedItemPosition) {
+                    0 -> {
+                        wetPreview
+                    }
+                    1 -> {
+                        wetPreview.setText(" " + wetIngredients.selectedItem)
+                    }
+                    2 -> {
+                        wetPreview.setText(" " + wetIngredients.selectedItem)
+                    }
+                    3 -> {
+                        wetPreview.setText(" " + wetIngredients.selectedItem)
+                    }
                 }
             }
 
@@ -89,49 +92,37 @@ class MainActivity : AppCompatActivity() {
         }
 
         myButton.setOnClickListener {
-            if(dryIngredients.selectedItemPosition == 0 && wetIngredients.selectedItemPosition==0)
-            {
-                defaultImage.setImageResource(R.drawable.pour_milk_into_flour)
-            }
-
-            else if(dryIngredients.selectedItemPosition == 0 && wetIngredients.selectedItemPosition==1)
-            {
-                defaultImage.setImageResource(R.drawable.img_6121)
-            }
-
-            else if(dryIngredients.selectedItemPosition == 0 && wetIngredients.selectedItemPosition==2)
-            {
-                defaultImage.setImageResource(R.drawable.focaccia_step_1h_06532ec9_840d_498a_98a4_6c88bc0f725c_0_472x310)
-            }
-
-            else if(dryIngredients.selectedItemPosition == 1 && wetIngredients.selectedItemPosition==0)
-            {
-                defaultImage.setImageResource(R.drawable.does_milk_have_sugar_in_it_naturally)
-            }
-
-            else if(dryIngredients.selectedItemPosition == 1 && wetIngredients.selectedItemPosition==1)
-            {
-                defaultImage.setImageResource(R.drawable.mix_sugar_eggs_prepare_baking_cake_40267318)
-            }
-
-            else if(dryIngredients.selectedItemPosition == 1 && wetIngredients.selectedItemPosition==2)
-            {
-                defaultImage.setImageResource(R.drawable.mix_sugar_and_olive_oil)
-            }
-
-            else if(dryIngredients.selectedItemPosition == 2 && wetIngredients.selectedItemPosition==0)
-            {
-                defaultImage.setImageResource(R.drawable.chocolate_milk_sedimentation_5_1)
-            }
-
-            else if(dryIngredients.selectedItemPosition == 2 && wetIngredients.selectedItemPosition==1)
-            {
-                defaultImage.setImageResource(R.drawable.ultimate_fudgy_brownies_without_eggs_19)
-            }
-
-            else if(dryIngredients.selectedItemPosition == 2 && wetIngredients.selectedItemPosition==2)
-            {
-                defaultImage.setImageResource(R.drawable.cocoa_powder)
+            when {
+                dryIngredients.selectedItemPosition == 0 && wetIngredients.selectedItemPosition == 0 -> {
+                    defaultImage
+                }
+                dryIngredients.selectedItemPosition == 1 && wetIngredients.selectedItemPosition==1 -> {
+                    defaultImage.setImageResource(R.drawable.pour_milk_into_flour)
+                }
+                dryIngredients.selectedItemPosition == 1 && wetIngredients.selectedItemPosition==2 -> {
+                    defaultImage.setImageResource(R.drawable.img_6121)
+                }
+                dryIngredients.selectedItemPosition == 1 && wetIngredients.selectedItemPosition==3 -> {
+                    defaultImage.setImageResource(R.drawable.focaccia_step_1h_06532ec9_840d_498a_98a4_6c88bc0f725c_0_472x310)
+                }
+                dryIngredients.selectedItemPosition == 2 && wetIngredients.selectedItemPosition==1 -> {
+                    defaultImage.setImageResource(R.drawable.does_milk_have_sugar_in_it_naturally)
+                }
+                dryIngredients.selectedItemPosition == 2 && wetIngredients.selectedItemPosition==2 -> {
+                    defaultImage.setImageResource(R.drawable.mix_sugar_eggs_prepare_baking_cake_40267318)
+                }
+                dryIngredients.selectedItemPosition == 2 && wetIngredients.selectedItemPosition==3 -> {
+                    defaultImage.setImageResource(R.drawable.mix_sugar_and_olive_oil)
+                }
+                dryIngredients.selectedItemPosition == 3 && wetIngredients.selectedItemPosition==1 -> {
+                    defaultImage.setImageResource(R.drawable.chocolate_milk_sedimentation_5_1)
+                }
+                dryIngredients.selectedItemPosition == 3 && wetIngredients.selectedItemPosition==2 -> {
+                    defaultImage.setImageResource(R.drawable.ultimate_fudgy_brownies_without_eggs_19)
+                }
+                dryIngredients.selectedItemPosition == 3 && wetIngredients.selectedItemPosition==3 -> {
+                    defaultImage.setImageResource(R.drawable.cocoa_powder)
+                }
             }
         }
     }
