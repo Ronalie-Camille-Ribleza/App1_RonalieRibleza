@@ -11,63 +11,29 @@
         android:id="@+id/imageView"
         android:layout_width="279dp"
         android:layout_height="164dp"
-        android:layout_marginBottom="15dp"
         android:contentDescription="Cake image"
-        app:layout_constraintBottom_toBottomOf="@id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cake"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="28dp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:text="Cake-ulator"
         android:textAlignment="center"
         android:textColor="#383d3b"
         android:textSize="35sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/dryIngredients"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView"
-        tools:ignore="HardcodedText,MissingConstraints" />
-
-    <Spinner
-        android:id="@+id/dryIngredients"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:contentDescription="Dry ingredient selector"
-        android:hint="Dry Ingredient"
-        app:layout_constraintBottom_toTopOf="@+id/wetIngredients"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
-
-    <Spinner
-        android:id="@+id/wetIngredients"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:contentDescription="Wet ingredient selector"
-        android:hint="Wet Ingredient"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dryIngredients"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="214dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_marginTop="15dp"
         android:layout_marginBottom="250dp"
         android:backgroundTint="#52DEE5"
         android:text="Mix!"
@@ -75,7 +41,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/wetIngredients"
         tools:ignore="HardcodedText" />
 
     <ImageView
