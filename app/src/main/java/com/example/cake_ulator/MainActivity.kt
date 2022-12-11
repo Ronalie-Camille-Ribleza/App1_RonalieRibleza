@@ -9,8 +9,6 @@ import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    val dryStuff = arrayOf("Flour", "Sugar", "Cocoa Powder")
-    val wetStuff = arrayOf("Eggs", "Milk", "Oil")
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
