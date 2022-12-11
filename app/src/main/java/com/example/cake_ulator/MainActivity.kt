@@ -1,10 +1,12 @@
 package com.example.cake_ulator
 
 import android.annotation.SuppressLint
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.WindowManager
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -19,6 +21,22 @@ class MainActivity : AppCompatActivity() {
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val help = findViewById<Button>(R.id.helpButton)
+
+        // modal for app tutorial
+        help.setOnClickListener{ val modalBinding = layoutInflater.inflate(R.layout.tutorial_alert_dialog, null)
+            val tutorialModal = Dialog(this)
+            tutorialModal.setContentView(modalBinding)
+
+            tutorialModal.setCancelable(true)
+            tutorialModal.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            tutorialModal.show()
+
+            val start = tutorialModal.findViewById<Button>(R.id.startMix)
+            start.setOnClickListener {
+                tutorialModal.dismiss()
+            }
+        }
 
         // creating adapter values for viewing
         val adapterD = ArrayAdapter(this, android.R.layout.simple_spinner_item, ingredientsA)

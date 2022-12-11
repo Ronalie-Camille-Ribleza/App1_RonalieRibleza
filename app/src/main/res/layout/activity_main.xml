@@ -11,13 +11,13 @@
         android:id="@+id/imageView"
         android:layout_width="225dp"
         android:layout_height="125dp"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="65dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:contentDescription="Cake image"
         app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/helpButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cake"
@@ -162,6 +162,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dryPreview"
         tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/helpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="105dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="51dp"
+        android:backgroundTint="#52DEE5"
+        android:text="Help"
+        android:textColor="#383D3B"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
